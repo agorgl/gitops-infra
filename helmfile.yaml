@@ -1,0 +1,16 @@
+repositories:
+  # Argo charts, https://github.com/argoproj/argo-helm
+  - name: argo
+    url: https://argoproj.github.io/argo-helm
+
+namespace: gitops
+
+releases:
+  # Argo Workflows
+  - name: argo-workflows
+    chart: argo/argo-workflows
+    values:
+      - values/argo-workflows.yaml.gotmpl
+
+values:
+  - .env.{{ .Environment.Name }}.yaml
