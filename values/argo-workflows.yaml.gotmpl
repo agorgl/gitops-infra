@@ -1,3 +1,10 @@
+workflow:
+  serviceAccount:
+    create: true
+    name: "workflows"
+  rbac:
+    create: true
+
 controller:
   containerRuntimeExecutor: "emissary"
   workflowNamespaces:
