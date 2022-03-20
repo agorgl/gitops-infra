@@ -14,3 +14,8 @@ To get the auth token for argo workflows run:
 ```
 kubectl -n gitops exec $(kubectl -n gitops get pod -l app.kubernetes.io/instance=argo-workflows,app.kubernetes.io/component=server -o name) -- argo auth token
 ```
+
+To create the workflow artifacts secret run:
+```
+kubectl -n workflows create secret generic workflow-artifacts --from-literal=accesskey=<ACCESSKEY> --from-literal=secretkey=<SECRETKEY>
+```
