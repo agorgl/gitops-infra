@@ -12,5 +12,11 @@ releases:
     values:
       - values/argo-workflows.yaml.gotmpl
 
+  # Argo CD
+  - name: argo-cd
+    chart: argo/argo-cd
+    values:
+      - values/argo-cd.yaml.gotmpl
+
 values:
   - .env.{{ .Environment.Name }}.yaml

@@ -1,0 +1,9 @@
+server:
+  extraArgs:
+    - --insecure
+
+  ingress:
+    enabled: true
+    ingressClassName: "nginx"
+    hosts:
+      - cd.{{ .Values.domain }}
