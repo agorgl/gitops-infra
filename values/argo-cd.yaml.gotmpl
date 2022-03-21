@@ -7,3 +7,15 @@ server:
     ingressClassName: "nginx"
     hosts:
       - cd.{{ .Values.domain }}
+
+  config:
+    configManagementPlugins: |
+      - name: helmfile
+        generate:
+          command: ["/bin/sh", "-c"]
+          args: ["helmfile template | sed -e '1,/---/d' | sed -e 's|apiregistration.k8s.io/v1beta1|apiregistration.k8s.io/v1|g'"]
+
+repoServer:
+  image:
+    repository: "chatwork/argocd-helmfile"
+    tag: "latest"
