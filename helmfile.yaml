@@ -19,4 +19,4 @@ releases:
       - values/argo-cd.yaml.gotmpl
 
 values:
-  - .env.{{ .Environment.Name }}.yaml
+  - values.yaml.gotmpl
