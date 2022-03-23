@@ -18,5 +18,11 @@ releases:
     values:
       - values/argo-cd.yaml.gotmpl
 
+  # Argo CD Image Updater
+  - name: argo-cd-image-updater
+    chart: argo/argocd-image-updater
+    values:
+      - values/argo-cd-image-updater.yaml.gotmpl
+
 values:
   - .env.{{ .Environment.Name }}.yaml
