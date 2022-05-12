@@ -9,3 +9,12 @@ server:
     ingressClassName: "nginx"
     hosts:
       - cd.{{ .Values.domain }}
+
+applicationSet:
+  enabled: false
+
+dex:
+  enabled: false
+
+notifications:
+  enabled: false
